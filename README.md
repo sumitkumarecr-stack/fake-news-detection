@@ -11,6 +11,7 @@ A GitHub-ready machine-learning web application that classifies news text as **F
 - TF-IDF with unigram + bigram features
 - Logistic Regression classifier
 - Flask REST API
+- Streamlit web application
 - Responsive web interface
 - SQLite prediction history
 - Model evaluation during training
@@ -41,6 +42,7 @@ SQLite History
 ```text
 fake-news-detection/
 ├── app.py
+├── streamlit_app.py
 ├── train_model.py
 ├── predict.py
 ├── requirements.txt
@@ -115,6 +117,40 @@ Open:
 
 ```text
 http://127.0.0.1:5000
+
+### Run with Streamlit
+
+The Streamlit entry point is `streamlit_app.py`:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Open the URL printed by Streamlit, usually:
+
+```text
+http://localhost:8501
+```
+
+## ☁️ Deploy on Streamlit Community Cloud
+
+1. Push this repository to GitHub, including both files in `model/`:
+
+   ```bash
+   git add streamlit_app.py requirements.txt .gitignore model/*.pkl
+   git commit -m "Add Streamlit deployment"
+   git push origin main
+   ```
+
+   If the model files were previously ignored, use `git add -f model/*.pkl`.
+2. Sign in at [share.streamlit.io](https://share.streamlit.io/) with GitHub.
+3. Select **New app**, choose this repository and branch, and set the main file to
+   `streamlit_app.py`.
+4. Select **Deploy**. Streamlit Cloud installs `requirements.txt` and starts the app.
+
+The SQLite history is suitable for a demonstration, but Streamlit Cloud storage is
+ephemeral and can reset when the app restarts. Use a hosted database if history must
+survive redeployments.
 ```
 
 ## 📊 Dataset

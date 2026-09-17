@@ -8,4 +8,7 @@ __pycache__/
 .idea/
 .vscode/
 predictions.db
+# The trained artifacts are required by Streamlit Cloud at runtime.
 model/*.pkl
+!model/fake_news_model.pkl
+!model/tfidf_vectorizer.pkl
