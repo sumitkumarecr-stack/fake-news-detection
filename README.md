@@ -4,6 +4,10 @@ A GitHub-ready machine-learning web application that classifies news text as **F
 
 > **Important:** A classifier predicts patterns learned from its training data. It is not a substitute for professional fact-checking or verification of a news story.
 
+## 🌐 Live Demo
+
+[Open the Fake News Detection app on Streamlit](https://fake-news-detection-lnhqjbrzv7iyayuzfb4k7x.streamlit.app/)
+
 ## ✨ Features
 
 - FAKE / REAL news classification
